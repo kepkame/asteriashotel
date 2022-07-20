@@ -1,0 +1,254 @@
+// Header
+
+.page-header {
+    border-bottom: 1px solid $border-color-light;
+}
+
+.page-header__top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding-top: 13px;
+    padding-bottom: 10px;
+}
+
+.page-header__address,
+.page-header__btn-phone span,
+.page-header__whatsapp,
+.page-header__instagram {
+    display: none;
+}
+
+.custom-logo-link {
+    display: inline-block;
+
+    &:focus {
+        outline: 1px solid $primary-color;
+    }
+}
+
+.page-header__img {
+    width: 140px;
+    height: 32px; 
+}
+
+.page-header__btn-phone {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+
+    &:focus,
+    &:hover {
+        opacity: $level-of-transparency;
+    }
+
+    &:focus {
+        outline: 1px solid $primary-color;
+        outline-offset: 2px;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 14px;
+        height: 14px;
+        background-image: url("../img/icon-phone-call.svg");
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+.body-fixed-menu {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (min-width: 850px) {  
+    .body-fixed-menu {
+        position: static;
+        height: auto;
+        width: auto;
+    }
+
+    .main-menu--show + .page-header__shading {
+        position: static;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        cursor: default;
+    }
+
+    .page-header__top {
+        padding-bottom: 8px;
+        
+        .menu-toggle {
+            display: none;
+        }
+    }
+
+    .page-header__col {
+        max-width: 332px;
+        flex-basis: 40%;
+    }
+
+    .page-header__address {
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 22px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background-image: url("../img/icon-pin.svg");
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: translateY(-50%);
+        }
+    }
+
+    .page-header__col--center {
+        max-width: 118px;
+        flex-basis: 118px;
+    }
+
+    .custom-logo-link img {
+        width: 118px;
+        height: 27px;
+        padding-top: 3px;
+    }
+
+    .page-header__col--right {
+        text-align: right;
+
+        a:focus {
+            outline: none;
+        }
+    }
+
+    .page-header__btn-phone {
+        width: auto;
+        height: auto;
+        color: $text-color;
+        padding-left: 22px;
+        
+
+        &:focus {
+            outline: 1px solid $primary-color;
+            outline-offset: 2px;
+            outline: none;
+        }
+
+        &:focus,
+        &:hover {
+            opacity: 1;
+        }
+
+        &:focus span,
+        &:hover span {
+            text-decoration: underline;
+            color: $primary-color-dark;
+        }
+
+        &:focus:after,
+        &:hover:after {
+            opacity: $level-of-transparency;
+        }
+
+        span {
+            font-size: 14px;
+            line-height: 18px;
+            display: inline-block;
+        }
+
+        &:after {
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            transform: translateY(-50%);
+        }
+    }
+
+    .page-header__whatsapp {
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 18px;
+        text-decoration: none;
+        color: $text-color;
+        margin-left: 15px;
+        padding-left: 22px;
+
+        &:focus:after,
+        &:hover:after {
+            opacity: $level-of-transparency;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background-image: url("../img/icon-whatsapp.svg");
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: translateY(-50%);
+        }
+    }
+
+    .page-header__instagram {
+        position: relative;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        font-size: 14px;
+        line-height: 18px;
+        margin-left: 15px;
+
+        &:focus:after,
+        &:hover:after {
+            opacity: $level-of-transparency;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background-image: url("../img/icon-instagram.svg");
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: translateY(-50%);
+        }
+    }
+
+    .page-header__menu {
+        margin-bottom: 15px;
+    }
+
+}

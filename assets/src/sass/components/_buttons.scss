@@ -1,0 +1,140 @@
+// Кнопки
+
+.btn {
+    display: inline-block;
+    font-size: 16px;
+    font-family: $ff-primary;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: $primary-color;
+    box-sizing: border-box;
+    padding: 7px 15px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:focus,
+    &:hover {
+        text-decoration: none;
+        color: #ffffff;
+        background-color: $primary-color-dark;
+        outline: none;
+    }
+}
+
+.btn-circle {
+    display: inline-block;
+    position: relative;
+    width: 26px;
+    height: 26px;
+    text-decoration: none;
+    background-color: $primary-color;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        text-decoration: none;
+        background-color: $primary-color-dark;
+        outline: none;
+    }
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 2px;
+        height: 7px;
+        background-color: #ffffff;
+    }
+
+    &:before {
+        top: 7px;
+        transform: translate(-50%, 0) rotate(-45deg);
+    }
+
+    &:after {
+        bottom: 7px;
+        transform: translate(-50%, 0) rotate(45deg);
+    }
+}
+
+.btn-top {
+    position: fixed;
+    bottom: 0;
+    right: 60px;
+    opacity: 0;
+    z-index: 9999;
+
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+        background-color: transparent;
+    }
+
+    &:before {
+        top: 0;
+        width: 32px;
+        height: 32px;
+        background-color: $primary-color;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    &:focus:before,
+    &:hover:before {
+        background-color: $primary-color-dark;
+    }
+    
+    &:after {
+        top: 10px;
+        left: 7px;
+        width: 18px;
+        height: 14px;
+        background-image: url("../img/icon-arrow-white.svg");
+        background-size: 30px 14px;
+        background-position: left center;
+        background-repeat: no-repeat;
+        transform: rotate(90deg);
+    }
+    
+    &:hover:after {
+        border-color: $secondary-color;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .btn-top--show {
+        display: block;
+        bottom: 0;
+        right: 60px;
+        opacity: 1;
+        transition: opacity 1s;
+        animation: .6s forwards smoothAppearance;
+    }
+
+    .btn-circle {
+        width: 34px;
+        height: 34px;
+
+        &:before,
+        &:after {
+            height: 9px;
+        }
+
+        &:before {
+            top: 9px;
+            transform: translate(calc(-50% + 1px), 0) rotate(-45deg);
+        }
+    
+        &:after {
+            bottom: 9px;
+            transform: translate(calc(-50% + 1px), 0) rotate(45deg);
+        }
+    }
+}
+
+

@@ -1,0 +1,211 @@
+// Forms
+
+form {
+    margin: 0;
+    padding: 0;
+
+    p {
+        @extend %visually-hidden;
+    }
+}
+
+input {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 8px 15px;
+    border: 1px solid $border-color-dark;
+    box-sizing: border-box;
+
+    &:focus {
+        border-color: $primary-color;
+        outline: 1px solid rgba($primary-color, 0.5);
+    }
+
+    &[type="checkbox"]:focus + span:before {
+        outline: 1px solid rgba($primary-color, 1);
+    }
+}
+
+textarea {
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+    border: 1px solid $border-color-dark;
+    padding: 8px 15px;
+    box-sizing: border-box;
+
+    &:focus {
+        border-color: $primary-color;
+        outline: 1px solid rgba($primary-color, 0.5);
+    }
+}
+
+input[type="submit"] {
+    width: auto;
+    font-size: 16px;
+    font-family: $ff-primary;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: $primary-color;
+    border: none;
+    padding: 4px 15px;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        background-color: $primary-color-dark;
+    }
+
+    & + span.ajax-loader {
+        @extend %visually-hidden;
+    }
+}
+
+
+.simple-form {
+
+    input[type="checkbox"]:focus + span:before {
+        border-color: $primary-color;
+    }
+}
+
+.simple-form__row {
+    margin-bottom: 15px;
+
+    &--submit {
+        margin-bottom: 0;
+    }
+
+    & > label {
+        @extend %visually-hidden;
+    }
+}
+
+.simple-form__row--asseptance {
+    position: relative;
+
+    input {
+        @extend %visually-hidden;
+    }
+
+    label span {
+        position: relative;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 16px;
+        padding-left: 24px;
+        cursor: pointer;
+
+        a {
+            font-size: inherit;
+            line-height: inherit;
+
+            &:focus {
+                outline: 1px solid $primary-color;
+            }
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 14px;
+            height: 14px;
+            border: 1px solid mix($border-color-light, #000000, 70%);
+        }
+    }
+
+    input + span:after {
+        content: none;
+        position: absolute;
+        top: 9px;
+        left: 3px;
+        width: 2px;
+        height: 2px;
+        background-color: $text-color;
+        box-shadow: 2px 0 0 $text-color,
+                    4px 0 0 $text-color,
+                    4px -2px 0 $text-color,
+                    4px -4px 0 $text-color,
+                    4px -6px 0 $text-color,
+                    4px -8px 0 $text-color;
+        transform: rotate(45deg);
+    }
+
+    input:checked + span:after {
+        content: "";
+    }
+
+    .wpcf7-list-item {
+        margin-left: 0;
+    }
+
+    .agree-notice {
+        position: absolute;
+        top: 25px;
+        left: -21px;
+        width: auto;
+        max-width: 190px;
+        height: auto;
+        font-size: 12px;
+        line-height: 16px;
+        color: #ffffff;
+        background-color: mix($secondary-color, #ffffff, 85);
+        padding: 8px 15px;
+        opacity: 0;
+        transition: opacity 0.2s ease-out;
+        z-index: 1;
+    
+        &:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 21px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 10px solid mix($secondary-color, #ffffff, 85);
+        }
+    
+        &--show {
+            opacity: 1;
+        }
+    }
+}
+
+.simple-form__row--agree {
+    display: none;
+}
+
+.simple-form__row--submit {
+    text-align: right;
+}
+
+.simple-form__response-output {
+    display: none;
+    font-size: 14px;
+    line-height: 18px;
+    border: 2px solid $primary-color;
+    margin-top: 15px;
+    padding: 10px 15px;
+}
+
+.simple-form.sent .simple-form__response-output,
+.simple-form.invalid .simple-form__response-output {
+    display: block;
+}
+
+.simple-form.sent .simple-form__response-output {
+    border-color: $color-success;
+}
+
+.simple-form.invalid .simple-form__response-output {
+    border-color: $color-warning;
+}
+

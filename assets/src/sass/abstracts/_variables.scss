@@ -1,0 +1,19 @@
+// SASS переменные
+
+$primary-color: #b99470;
+$primary-color-dark: mix($primary-color, #000000, 80%);
+$secondary-color: #484240;
+$title-color: #332f2d;
+$text-color: #3c3c3c;
+$border-color-light: #eaeaea;
+$border-color-dark: mix($border-color-light, #000000, 85%);
+$bg-light: #f7f7f7;
+
+$color-success: #4ccd5c;
+$color-warning: #ffca00;
+
+$ff-title: "PT Serif", "Times New Roman", Times, serif;
+$ff-primary: "Open Sans", Arial, sans-serif;
+
+$level-of-transparency: 0.6;
+$section-margin: 55px;

@@ -1,0 +1,26 @@
+// Сетка
+
+.container {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+body:not(.home) .site-main {
+    margin-top: 38px;
+    margin-bottom: 60px;
+}
+
+@media screen and (min-width:768px) {
+    body:not(.home) .site-main {
+        margin-bottom: 100px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+}
